@@ -13,6 +13,7 @@ var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
+  ppc: require('bitcore-lib-peercoin'),
   eth: Bitcore
 };
 var PrivateKey = Bitcore.PrivateKey;

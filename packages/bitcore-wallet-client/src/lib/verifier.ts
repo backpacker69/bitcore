@@ -4,6 +4,7 @@ var $ = require('preconditions').singleton();
 
 var Bitcore = require('bitcore-lib');
 var BCHAddress = require('bitcore-lib-cash').Address;
+var PPCAddress = require('bitcore-lib-peercoin').Address;
 
 var log = require('./log');
 
@@ -184,6 +185,9 @@ export class Verifier {
 
     // Workaround for cashaddr/legacy address problems...
     if (txp.coin == 'bch' && (new BCHAddress(toAddress).toString()) != (new BCHAddress(payproOpts.toAddress).toString()))
+      return false;
+
+    if (txp.coin == 'ppc' && (new PPCAddress(toAddress).toString()) != (new PPCAddress(payproOpts.toAddress).toString()))
       return false;
 
     // this generates problems...

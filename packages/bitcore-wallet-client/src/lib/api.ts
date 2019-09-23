@@ -19,6 +19,7 @@ var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
   bch: require('bitcore-lib-cash'),
+  ppc: require('bitcore-lib-peercoin'),
   eth: Bitcore
 };
 var Mnemonic = require('bitcore-mnemonic');
@@ -63,6 +64,7 @@ export class API extends EventEmitter {
   // Expose bitcore
   static Bitcore = require('bitcore-lib');
   static BitcoreCash = require('bitcore-lib-cash');
+  static BitcorePeercoin = require('bitcore-lib-peercoin');
 
   constructor(opts?) {
     super();
